@@ -1,0 +1,221 @@
+:root {
+    --gradient-primary: linear-gradient(135deg, #FF6B6B, #FFE66D);
+    --gradient-secondary: linear-gradient(45deg, #4158D0, #C850C0, #FFCC70);
+    --gradient-accent: linear-gradient(to right, #FF416C, #FF4B2B);
+    --gradient-cool: linear-gradient(to right, #0093E9, #80D0C7);
+    --text-gradient: linear-gradient(45deg, #FF6B6B, #4158D0);
+    --background-gradient: linear-gradient(135deg, #f6d5f7, #fbe9d7);
+  }
+  
+  /* General Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background-gradient);
+    min-height: 100vh;
+    color: #2c3e50;
+  }
+  
+  /* Search Form with Glassmorphism */
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+  
+  form .searchButton {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 700px;
+  }
+  
+  input#inputButton {
+    flex: 1;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  input#inputButton:focus {
+    outline: none;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  button#search {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    background: var(--gradient-accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  button#search:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 65, 108, 0.3);
+  }
+  
+  i.material-icons {
+    font-size: 24px;
+    background: var(--gradient-cool);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+  }
+  
+  i.material-icons:hover {
+    transform: rotate(180deg) scale(1.2);
+  }
+  
+  /* Recipe Container with Modern Design */
+  #container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Dynamic Food Name Typography */
+  #container h1#foodName {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    text-transform: capitalize;
+    letter-spacing: -1px;
+    animation: titlePulse 2s infinite;
+  }
+  
+  @keyframes titlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Enhanced Food Image Styling */
+  #container img#foodPic {
+    max-width: 85%;
+    height: auto;
+    border-radius: 30px;
+    margin: 25px 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 5px solid transparent;
+    background: var(--gradient-primary);
+    background-clip: padding-box;
+    transition: transform 0.5s ease;
+  }
+  
+  #container img#foodPic:hover {
+    transform: scale(1.03) rotate(1deg);
+  }
+  
+  /* Stylized Meal Area */
+  #container p#mealArea {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: var(--gradient-cool);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  /* Enhanced Content Typography */
+  #container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #34495e;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  /* Stylized Ingredient List */
+  #ingredients {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f6f9fc, #eef2f7);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    text-align: left;
+    color: #2c3e50;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid;
+    border-image: var(--gradient-accent);
+    border-image-slice: 1;
+  }
+  
+  /* Responsive Design with Dynamic Typography */
+  @media (max-width: 768px) {
+    #container h1#foodName {
+      font-size: 2.5rem;
+    }
+  
+    #container p#mealArea {
+      font-size: 1.5rem;
+    }
+  
+    form .searchButton {
+      flex-direction: column;
+    }
+  
+    button#search {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    #container {
+      margin: 20px;
+      padding: 20px;
+    }
+  }
+  
+  /* Hover Effects for Interactive Elements */
+  #container > * {
+    transition: all 0.3s ease;
+  }
+  
+  #container > *:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Print Optimization */
+  @media print {
+    body {
+      background: none;
+    }
+  
+    #container {
+      box-shadow: none;
+    }
+  
+    #container h1#foodName {
+      color: #000;
+      -webkit-text-fill-color: initial;
+    }
+  }
